@@ -1,9 +1,11 @@
 header {
   background: linear-gradient(to right, lilac, white);
-  border-bottom: 10px solid pink;
+  border-bottom: 10px solid lilac;
 }
 
 nav {
+  background-color: black;
+  color: white;
   display: flex;
   justify-content: center;
   gap: 2em;
@@ -18,8 +20,13 @@ nav a {
 body {
   background: linear-gradient(to right, lilac, white);
   font-family: papyrus;
+  color: white;
 }
 
 p {
   font-size: 21px;
+}
+
+footer {
+  border-top: 10px solid lilac;
 }

@@ -1,104 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Game Dev Portfolio</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Courier New', monospace;
-      background: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
-      color: #00ffcc;
-      background-color: #111;
-    }
-    header {
-      background-color: #000;
-      padding: 1em;
-      text-align: center;
-      font-size: 2em;
-      border-bottom: 3px solid #00ffcc;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 2em;
-      margin: 1em 0;
-    }
-    nav a {
-      color: #0ff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      padding: 1em 2em;
-      max-width: 800px;
-      margin: auto;
-    }
-    .project {
-      background-color: #222;
-      border: 2px solid #0ff;
-      padding: 1em;
-      margin: 1em 0;
-      border-radius: 10px;
-    }
-    .project h3 {
-      margin-top: 0;
-    }
-    footer {
-      text-align: center;
-      padding: 1em;
-      background-color: #000;
-      border-top: 3px solid #0ff;
-    }
-    button:hover {
-      cursor: url('data:image/jpeg;base64,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'), auto;
-    }
-  </style>
-</head>
-<body>
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>Harry Potter</title>
+    <link rel='stylesheet' href='style.css'>
+  </head>
+  
   <header>
-    👾 Last Updated: Now
-  </header>
+    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Harry_Potter_logo.svg/250px-Harry_Potter_logo.svg.png' alt='Harry Potter'>    
+  </header>  
 
   <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    Year:
+    <a href='#1'>2016</a>
+    <a href='#2'>2018</a>
+    <a href='#3'>2022</a>
   </nav>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      Hi! I'm a passionate game developer currently pursuing B.Tech in CSE. I love creating interactive and fun experiences.
-      This is my portfolio powered by HTML and hosted for free via GitHub Pages!
-    </p>
-  </section>
-
-  <section id="projects">
-    <h2>My Games</h2>
-
-    <div class="project">
-      <h3>🕹️ Pixel Runner</h3>
-      <p>A simple endless runner made in JavaScript + HTML Canvas. Try it below!</p>
-      <iframe src="https://editor.p5js.org/embed/yCnKD-wBt" width="100%" height="400px"></iframe>
+  
+  <body>
+    
+    <div>
+      <section id='1'>
+        <h1>Fantastic Beasts and Where to Find Them (2016)</h1>
+        <img src='https://resizing.flixster.com/YFpdwL3QzPUdF-s7zGwdJ_F_KYY=/fit-in/180x240/v2/https://resizing.flixster.com/7DcZR4tcLGFFdwp2P6BixDFuVF0=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2RiMTYyZGRlLTEwNDMtNDRhYi05MzRkLTE0NjM1ZTkwNjdmZi53ZWJw'>
+        <p>
+          <strong>Critics Consensus</strong>: Fantastic Beasts and Where to Find Them draws on Harry Potter's rich mythology to deliver a spinoff that dazzles with franchise-building magic all its own.<br>          
+          <strong>Starring</strong>: Eddie Redmayne, Katherine Waterston, Dan Fogler, Alison Sudol<br>
+          <strong>Directed By</strong>: David Yates
+        </p>
+      </section>
     </div>
 
-    <div class="project">
-      <h3>🎯 Target Practice</h3>
-      <p>Click targets quickly before time runs out! Made with Kaboom.js.</p>
-      <iframe src="https://editor.p5js.org/embed/4OjDddvE4" width="100%" height="400px"></iframe>
+    <div>
+      <section id='2'>
+        <h1>Fantastic Beasts: The Crimes of Grindelwald (2018)</h1>
+        <img src='https://resizing.flixster.com/6GI2uuXO_8V0PeH6TCMdU-J9ku4=/fit-in/180x240/v2/https://resizing.flixster.com/47erqYRky74FKjCcwEjBZJsQO2s=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzc4M2IyOTU3LTYwMjEtNGY1Ni1hMTE4LTU3NGI5ZjVkYTM2My53ZWJw'>
+        <p>
+          <strong>Critics Consensus</strong>: Fantastic Beasts: The Crimes of Grindelwald has glimmers of the magic familiar to Harry Potter fans, but the story's spell isn't as strong as earlier installments.<br>          
+          <strong>Starring</strong>: Eddie Redmayne, Katherine Waterston, Dan Fogler, Alison Sudol<br>
+          <strong>Directed By</strong>: David Yates
+        </p>
+      </section>
     </div>
-  </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: anshuman@example.com</p>
-    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">@yourusername</a></p>
-  </section>
-
-  <footer>
-    🚀 Made with 💙 by Anshuman | Hosted on GitHub Pages
-  </footer>
-</body>
+    <div>
+      <section id='3'>
+        <h1>Fantastic Beasts: The Secrets of Dumbledore (2022)</h1>
+        <img src='https://resizing.flixster.com/v23GKwySnaoBNJtQ0ud3s4lt1nU=/fit-in/180x240/v2/https://resizing.flixster.com/WBMvlTWgyGIXaVs9ic2h8S3ks5w=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzQ1YzY3Yzg3LTk5Y2QtNDEyMS05YmE1LTcxMjI2ZTAzZTUyMC5qcGc='>
+        <p>
+          <strong>Critics Consensus</strong>: Fantastic Beasts: The Secrets of Dumbledore avoids some of the pitfalls that plagued its predecessor, but lacks much of the magic that drew audiences into the wizarding world many movies ago.<br>          
+          <strong>Starring</strong>: Eddie Redmayne, Katherine Waterston, Dan Fogler, Alison Sudol<br>
+          <strong>Directed By</strong>: David Yates
+        </p>
+      </section>
+    </div>
+    
+  </body>
 </html>

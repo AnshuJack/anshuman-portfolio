@@ -1,0 +1,25 @@
+header {
+  background: linear-gradient(to right, lilac, white);
+  border-bottom: 10px solid pink;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  margin: 1em 0;
+    }
+nav a {
+  color: #0ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+body {
+  background: linear-gradient(to right, lilac, white);
+  font-family: papyrus;
+}
+
+p {
+  font-size: 21px;
+}
